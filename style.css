@@ -20,8 +20,8 @@ html {
 .header {
   padding: 1px;
   text-align: center;
-  background: #000000;
-  color: #c9e20c;
+  background: #013369;
+  color: #ffffff;
   font-size: 30px;
 }
 
@@ -35,26 +35,40 @@ h1 {
   align-items: center;
   text-align: center;
   justify-content: space-evenly;
+  display: flex;
 }
 
-.pane {
-  width: 33.3333%;
+.paneleft {
+  width: 50%;
   height: 150vh;
-  background-color: #8d8d8d;
-  border: 2px solid;
+  background-color: #ffffff;
+  border: 3px solid;
+  border-right: 2px solid;
   align-items: center;
   text-align: center;
+  border-color: #d50a0a;
+}
+
+.paneright {
+  width: 50%;
+  height: 150vh;
+  background-color: #ffffff;
+  border: 3px solid;
+  align-items: center;
+  text-align: center;
+  border-left: 2px solid;
+  border-color: #d50a0a;
 }
 
 body {
   margin: 0!important;
 }
 
-.box {
+/*.box {
   display: flex;
   align-items: center;
   text-align: center;
-}
+}*/
 
 .subhead {
   padding: 30px;
