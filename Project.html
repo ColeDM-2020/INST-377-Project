@@ -17,8 +17,6 @@
           <div class="subhead">Years in League</div>
           <div class="text">1998 - 2015</div>
           <div class="subhead">Major Acheviements</div>
-          <div class="text">UPI AFC Coach of the Year (1972)</div>
-          <div class="text">Maxwell Football Club NFL Coach of the Year (1989)</div>
         </div>
         <div class="paneright">
           <h1>Eli Manning</h1>
@@ -26,9 +24,13 @@
           <div class="subhead">Years in League</div>
           <div class="text">2004 - 2019</div>
           <div class="subhead">Major Acheviements</div>
-          <div class="text">AP NFL Coach of the Year (1992)</div>
-          <div class="text">Sporting News NFL Coach of the Year (1992)</div>
-          <div class="text">Sporting News NFL Coach of the Year (2004)</div>
+          <form action="https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/athletes/5526/statistics/0" class="box">
+            <button type="button" id="data_load">Load Country Data</button> 
+            <div>
+              <label for="resto">Restaurant Name</label>
+              <input type="text" id="resto" name="resto">
+            </div>
+          </form>
         </div>
     </div>
 </body>

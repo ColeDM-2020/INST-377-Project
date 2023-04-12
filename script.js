@@ -75,13 +75,15 @@ async function mainEvent() { // the async keyword means we can make API requests
     */
 
     // Basic GET request - this replaces the form Action
-    const results = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json');
+    const results = await fetch('https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/athletes/5526/statistics/0');
 
     // This changes the response from the GET into data we can use - an "object"
     currentList = await results.json();
 
+    listNFL = currentList.getJSONObject('splits')
+
     loadAnimation.style.display = 'none';
-    console.table(currentList); 
+    console.table(listNFL); 
 
   });
 

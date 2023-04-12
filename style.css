@@ -61,7 +61,7 @@ h1 {
 }
 
 body {
-  margin: 0!important;
+  margin: 0;
 }
 
 .subhead {
@@ -80,4 +80,15 @@ body {
   height: 400px;
   align-items: center;
   border: 1px solid;
+}
+
+.box {
+  background-color: rgba(239, 239, 239, 0.4);
+  border: 2px dashed;
+  border-radius: 4px;
+
+  width: fit-content;
+  height:fit-content;
+  padding: 1.5rem;
+  margin: 0 auto;
 }
