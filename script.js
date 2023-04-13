@@ -19,6 +19,11 @@ async function mainEvent() { // the async keyword means we can make API requests
   const loadDataButton = document.querySelector('#data_load');
   const generalDataButton = document.querySelector('#general');
   const passingDataButton = document.querySelector('#passing');
+  const rushingDataButton = document.querySelector('#rushing');
+  const receivingDataButton = document.querySelector('#receiving');
+  const defensiveDataButton = document.querySelector('#defensive');
+  const defensiveInterceptionsDataButton = document.querySelector('#defensiveInterceptions');
+  const scoringDataButton = document.querySelector('#scoring');
 
   let currentList = []; // this is "scoped" to the main event function
   
@@ -58,6 +63,40 @@ async function mainEvent() { // the async keyword means we can make API requests
     injectHTML(dataList);
   })
   
+  rushingDataButton.addEventListener('click', (event) => {
+    console.log('Generate Stats');
+    dataList = dataDict[2].stats;
+    console.log(dataList);
+    injectHTML(dataList);
+  })
+
+  receivingDataButton.addEventListener('click', (event) => {
+    console.log('Generate Stats');
+    dataList = dataDict[3].stats;
+    console.log(dataList);
+    injectHTML(dataList);
+  })
+
+  defensiveDataButton.addEventListener('click', (event) => {
+    console.log('Generate Stats');
+    dataList = dataDict[4].stats;
+    console.log(dataList);
+    injectHTML(dataList);
+  })
+
+  defensiveInterceptionsDataButton.addEventListener('click', (event) => {
+    console.log('Generate Stats');
+    dataList = dataDict[5].stats;
+    console.log(dataList);
+    injectHTML(dataList);
+  })
+
+  scoringDataButton.addEventListener('click', (event) => {
+    console.log('Generate Stats');
+    dataList = dataDict[6].stats;
+    console.log(dataList);
+    injectHTML(dataList);
+  })
 }
 
 document.addEventListener('DOMContentLoaded', async () => mainEvent()); // the async keyword means we can make API requests
