@@ -21,16 +21,19 @@
         <div class="paneright">
           <h1>Eli Manning</h1>
           <div><img id="1" src="images/eli-manning.jpeg" alt="Image of Eli Manning" class="img"/></div>
-          <div class="subhead">Years in League</div>
+          <h2>Years In The League</h2>
           <div class="text">2004 - 2019</div>
-          <div class="subhead">Major Acheviements</div>
-          <form action="https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/athletes/5526/statistics/0" class="box">
+          <h2>Major Acheviements</h2>
+          <h2>Player Stats</h2>
+          <form action="https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/athletes/5526/statistics/0" class="main_form box">
             <button type="button" id="data_load">Load Country Data</button> 
-            <div>
-              <label for="resto">Restaurant Name</label>
-              <input type="text" id="resto" name="resto">
-            </div>
+            <div><button type="button" id="general">General Data</button></div>
+            <div><button type="button" id="passing">Passing Data</button></div>
           </form>
+          <div></div>
+            <dl class="restaurant_list box"></dl>
+          </div>
         </div>
     </div>
+  <script src="script.js"></script>
 </body>
