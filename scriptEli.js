@@ -28,12 +28,10 @@ async function mainEvent() { // the async keyword means we can make API requests
   let currentList = []; // this is "scoped" to the main event function
   
   /* We need to listen to an "event" to have something happen in our page - here we're listening for a "submit" */
-  loadDataButton.addEventListener('click', async (submitEvent) => { // async has to be declared on every function that needs to "await" something
+  loadDataButton.addEventListener('click', async (submitEvent) => { 
     
     // this is substituting for a "breakpoint" - it prints to the browser to tell us we successfully submitted the form
     console.log('Loading Data'); 
-
-
 
     // Basic GET request - this replaces the form Action
     let results = await fetch('https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/athletes/5526/statistics/0');
@@ -41,7 +39,7 @@ async function mainEvent() { // the async keyword means we can make API requests
     // This changes the response from the GET into data we can use - an "object"
     currentList = await results.json();
 
-    storedData = localStorage.getItem('storedData')
+    storedData = localStorage.getItem('storedData');
     parsedData = JSON.parse(storedData);
 
     dataDict = parsedData.splits.categories;
