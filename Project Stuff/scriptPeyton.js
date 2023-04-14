@@ -6,7 +6,7 @@ function getRandomIntInclusive(min, max) {
 
 function injectHTML(list){
   console.log('fired injectHTML')
-  const target = document.querySelector('.stats_list');
+  const target = document.querySelector('.statsP_list');
   target.innerHTML = '';
   list.forEach((item) => {
     const str = `<li>${item.displayName}: ${item.value}</li>`;
