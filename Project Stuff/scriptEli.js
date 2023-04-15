@@ -15,6 +15,7 @@ function injectHTML(list){
 }
 
 async function mainEvent() { // the async keyword means we can make API requests
+  const mainForm = document.querySelector('.main_form');
   const loadDataButton = document.querySelector('#data_load');
   const generalDataButton = document.querySelector('#general');
   const passingDataButton = document.querySelector('#passing');
@@ -23,23 +24,23 @@ async function mainEvent() { // the async keyword means we can make API requests
   const defensiveDataButton = document.querySelector('#defensive');
   const defensiveInterceptionsDataButton = document.querySelector('#defensiveInterceptions');
   const scoringDataButton = document.querySelector('#scoring');
+  const clearDataButton = document.querySelector('#clear');
 
-   // this is "scoped" to the main event function
+  let currentList = [];
   
   /* We need to listen to an "event" to have something happen in our page - here we're listening for a "submit" */
   loadDataButton.addEventListener('click', async (submitEvent) => { 
     
-    currentList = [];
     // this is substituting for a "breakpoint" - it prints to the browser to tell us we successfully submitted the form
     console.log('Loading Data'); 
 
     // Basic GET request - this replaces the form Action
-    results = await fetch('https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/athletes/5526/statistics/0');
+    let results = await fetch('https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/athletes/5526/statistics/0');
 
     // This changes the response from the GET into data we can use - an "object"
     currentList = await results.json();
 
-    storedData = localStorage.getItem('storedData');
+    storedData = JSON.stringify(currentList);
     parsedData = JSON.parse(storedData);
 
     dataDict = parsedData.splits.categories;
@@ -95,6 +96,13 @@ async function mainEvent() { // the async keyword means we can make API requests
     console.log(dataList);
     injectHTML(dataList);
   })
+
+  clearDataButton.addEventListener('click', (event) => {
+    console.log('clear browsing data');
+    localStorage.clear();
+    console.log('localStorage Check', localStorage.getItem('storedData'));
+  })
+
 }
 
 document.addEventListener('DOMContentLoaded', async () => mainEvent()); // the async keyword means we can make API requests

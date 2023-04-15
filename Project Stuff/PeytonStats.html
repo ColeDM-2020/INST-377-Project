@@ -7,7 +7,11 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="box">
+  <header class="header">
+    <h1>Peyton Manning Career Stats</h1>
+  </header>
+  <div class="container">
+    <div class="box">
       <button type="button" id="data_load">Load Player Data</button> 
       <div><button type="button" id="general">General Data</button></div>
       <div><button type="button" id="passing">Passing Data</button></div>
@@ -16,9 +20,11 @@
       <div><button type="button" id="defensive">Defensive Data</button></div>
       <div><button type="button" id="defensiveInterceptions">Defensive Interceptions Data</button></div>
       <div><button type="button" id="scoring">Scoring Data</button></div>
-  </div>
-    <div></div>
-      <dl class="statsP_list box"></dl>
+      <div><button type="button" id="clear">Clear Data</button></div>
     </div>
+      <div></div>
+        <dl class="stats_list box"></dl>
+      </div>
+  </div>
   <script src="scriptPeyton.js"></script>
 </body>
